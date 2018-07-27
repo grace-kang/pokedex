@@ -2,7 +2,8 @@ import { combineReducers } from 'redux'
 import {
 	REQUEST_POKEMON,
 	RECEIVE_POKEMON,
-	FETCH_ERROR
+	FETCH_ERROR,
+	SortingOrders
 } from '../actions/actions'
 
 
@@ -31,6 +32,10 @@ function error(state = null, action) {
 function pokemon(state = [], action) {
 	switch(action.type) {
 		case RECEIVE_POKEMON:
+			return action.pokemon
+		case SortingOrders.ID:
+			return action.pokemon
+		case SortingOrders.NAME:
 			return action.pokemon
 		default:
 			return state

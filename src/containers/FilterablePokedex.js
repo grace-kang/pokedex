@@ -1,22 +1,33 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import Pokedex from '../components/Pokedex'
-// import Sort from '../components/Sort'
+import Sort from '../components/Sort'
 import Search from '../components/Search'
 import {
-	fetchPokemon
+	fetchPokemon,
+	sortByID,
+	sortByName
 } from '../redux/actions/actions'
 
 class FilterablePokedex extends React.Component {
-	state = { searchString: '' }
+	state = { searchString: '', sortHappened: false }
 	handleSearch = (e) => {                                        
 		this.setState({ searchString: e.target.value });             
 	}                                                              
-	//
-	// handleSort = (e) => {                                          
-	// 	console.log(e.target.value);                                 
-	// 	this.setState({ needToSort: true, sortBy: e.target.value }); 
-	// }                                                              
+
+	handleSort = (e) => {                                          
+		console.log('handling sort')
+		this.setState({ sortHappened: true })
+		if (e.target.value === 'ID') {
+			this.props.dispatch(sortByID())
+			console.log('dispatched sortById')
+			console.log(this.props)
+		} else if (e.target.value === 'NAME') {
+			this.props.dispatch(sortByName())
+			console.log('dispatched sortByName')
+			console.log(this.props)
+		}
+	}                                                              
 
 	componentDidMount() {                                                
 		this.props.dispatch(fetchPokemon())
@@ -30,24 +41,6 @@ class FilterablePokedex extends React.Component {
 			return <div>Loading...</div>                                     
 		} else {                                                           
 
-			// 	if (this.state.sortBy === "NAME") {                            
-			// 		var sorted = pokemon                                         
-			// 		sorted.sort(function(a,b) {                                  
-			// 			var nameA = a.name.toUpperCase();                          
-			// 			var nameB = b.name.toUpperCase();                          
-			// 			if (nameA < nameB) {                                       
-			// 				return -1;                                               
-			// 			}                                                          
-			// 			if (nameA > nameB) {                                       
-			// 				return 1;                                                
-			// 			}                                                          
-			// 			return 0;                                                  
-			// 		});                                                          
-			// 		console.log(sorted)                                          
-			// 		this.setState({ needToSort: false, pokemon: sorted })        
-			// 	}                                                              
-			// }                                                                
-			console.log(this.props)
 			var displayPokemon = this.props.pokemon
 			var searchString = this.state.searchString.trim().toLowerCase();   
 			if (searchString.length > 0) {                                   
@@ -55,10 +48,16 @@ class FilterablePokedex extends React.Component {
 					return i.name.toLowerCase().match( searchString );    
 				});                                                     
 			}                                                         
+			
+			if (this.state.sortHappened) {
+				displayPokemon = this.props.pokemon
+				this.setState({ sortHappened: false })
+			}
 
 			return (                                                  
 				<div className="FilterablePokedex">
 					<Search onChange={this.handleSearch} />
+					<Sort onChange={this.handleSort} />
 					<Pokedex displayPokemon={displayPokemon} />
 				</div>
 			)

@@ -3,6 +3,10 @@ import fetch from 'cross-fetch'
 export const REQUEST_POKEMON = 'REQUEST_POKEMON'
 export const RECEIVE_POKEMON  = 'RECEIVE_POKEMON'
 export const FETCH_ERROR = 'FETCH_ERROR'
+export const SortingOrders = {
+	ID: 'ID',
+	NAME: 'NAME'
+}
 
 function requestPokemon() {
 	console.log(REQUEST_POKEMON)
@@ -40,6 +44,42 @@ export function fetchPokemon() {
 				(json) => dispatch(receivePokemon(json)),
 				(error) => dispatch(fetchError(error))
 			)
+	}
+}
+
+export function sortByName(dispatch, getState) {
+	return (dispatch, getState) => {
+		var state = getState()
+		var sorted = state.pokemon                                  
+		sorted.sort(function(a,b) {                           
+			var nameA = a.name.toUpperCase();                   
+			var nameB = b.name.toUpperCase();                   
+			if (nameA < nameB) {                                
+				return -1;                                        
+			}                                                   
+			if (nameA > nameB) {                                
+				return 1;                                         
+			}                                                   
+			return 0;                                           
+		});                                                   
+		return {
+			type: SortingOrders.NAME,
+			pokemon: sorted
+		}
+	}
+}
+
+export function sortByID(dispatch, getState) {
+	return (dispatch, getState) => {
+		var state = getState()
+		var sorted = state.pokemon
+		sorted.sort(function (a,b) {
+			return a.id - b.id;
+		})
+		return {
+			type: SortingOrders.ID,
+			pokemon: sorted
+		}
 	}
 }
 
