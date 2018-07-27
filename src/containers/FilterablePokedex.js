@@ -1,50 +1,32 @@
 import React from 'react'
+import { connect } from 'react-redux'
 import Pokedex from '../components/Pokedex'
-import Sort from '../components/Sort'
+// import Sort from '../components/Sort'
 import Search from '../components/Search'
+import {
+	fetchPokemon
+} from '../redux/actions/actions'
 
 class FilterablePokedex extends React.Component {
-	state = { searchString: '', sortBy: 'ID' }
-
+	state = { searchString: '' }
 	handleSearch = (e) => {                                        
 		this.setState({ searchString: e.target.value });             
 	}                                                              
-
+	//
 	// handleSort = (e) => {                                          
 	// 	console.log(e.target.value);                                 
 	// 	this.setState({ needToSort: true, sortBy: e.target.value }); 
 	// }                                                              
 
 	componentDidMount() {                                                
-		fetch('https://pokeapi.co/api/v2/pokemon/?limit=949')              
-			.then(res => res.json())                                         
-			.then(                                                           
-				(json) => {                                                    
-					const pokemons = json.results.map(p => {                     
-						p.id = p.url.substring(34, p.url.length - 1)               
-						p.name = p.name.charAt(0).toUpperCase() + p.name.substr(1) 
-						return p                                                   
-					})                                                           
-					this.setState({                                              
-						isLoaded: true,                                            
-						pokemon: pokemons                                          
-					})                                                           
-				},                                                             
-
-				(error) => {                                                   
-					this.setState({                                              
-						isLoaded: true,                                            
-						error                                                      
-					});                                                          
-				}                                                              
-			)                                                                
+		this.props.dispatch(fetchPokemon())
 	}                                                                    
 
 	render() {                                                           
-		const { error, isLoaded } = this.state;                   
+		const { error, isFetching } = this.props;                   
 		if (error) {                                                       
 			return <div>Error: {error.message}</div>;                        
-		} else if (!isLoaded) {                                            
+		} else if (isFetching) {                                            
 			return <div>Loading...</div>                                     
 		} else {                                                           
 
@@ -65,8 +47,8 @@ class FilterablePokedex extends React.Component {
 			// 		this.setState({ needToSort: false, pokemon: sorted })        
 			// 	}                                                              
 			// }                                                                
-
-			var displayPokemon = this.state.pokemon                         
+			console.log(this.props)
+			var displayPokemon = this.props.pokemon
 			var searchString = this.state.searchString.trim().toLowerCase();   
 			if (searchString.length > 0) {                                   
 				displayPokemon = displayPokemon.filter(function(i) {    
@@ -84,6 +66,18 @@ class FilterablePokedex extends React.Component {
 	}
 }
 
-export default FilterablePokedex
+function mapStateToProps(state) {                           
+	const { isFetching, error, pokemon } =  state
+
+	return {                                                  
+		isFetching,                                             
+		error,                                                  
+		pokemon
+	}                                                         
+}                                                           
+
+export default connect(                                     
+	mapStateToProps                                          
+)(FilterablePokedex)                                        
 
 

@@ -8,7 +8,7 @@ class Pokedex extends React.Component {
 			<div className="Pokedex">
 				<div className="Pokedex-pokemon flex flex-wrap">
 					{displayPokemon.map(p => (
-						<Pokemon pokemon={p} />
+						<Pokemon key={p.id} pokemon={p} />
 					))}
 				</div>
 			</div>
