@@ -2,6 +2,8 @@
 
 # dependencies
 /node_modules
+/src/style/output.css
+tailwind.js
 
 # testing
 /coverage
