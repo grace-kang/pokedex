@@ -16,16 +16,11 @@ class FilterablePokedex extends React.Component {
 	}                                                              
 
 	handleSort = (e) => {                                          
-		console.log('handling sort')
 		this.setState({ sortHappened: true })
 		if (e.target.value === 'ID') {
 			this.props.dispatch(sortByID())
-			console.log('dispatched sortById')
-			console.log(this.props)
 		} else if (e.target.value === 'NAME') {
 			this.props.dispatch(sortByName())
-			console.log('dispatched sortByName')
-			console.log(this.props)
 		}
 	}                                                              
 
