@@ -1,3 +1,7 @@
 @tailwind preflight;
 @tailwind components;
 @tailwind utilities;
+
+.Modal {
+	background-color: rgba(0,0,0,0.3);
+}

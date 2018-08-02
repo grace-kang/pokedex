@@ -6,6 +6,7 @@ export const FETCH_ERROR = 'FETCH_ERROR'
 export const SELECT_POKEMON = 'SELECT_POKEMON'
 export const REQUEST_POKEMON_INFO = 'REQUEST_POKEMON_INFO'
 export const RECEIVE_POKEMON_INFO = 'RECEIVE_POKEMON_INFO'
+export const FILTER_POKEMON = 'FILTER_POKEMON'
 export const SortingOrders = {
 	ID: 'ID',
 	NAME: 'NAME'
@@ -85,10 +86,24 @@ export function fetchPokemonInfo(id) {
 	}
 }
 
+export function filterPokemon(searchString = '') {
+	return (dispatch, getState) => {
+		var pokemon = getState().pokemon
+		searchString = searchString.trim().toLowerCase()
+		pokemon = pokemon.filter(function(i) {
+			return i.name.toLowerCase().match( searchString );
+		});
+		dispatch({
+			type: FILTER_POKEMON,
+			displayPokemon: pokemon
+		})
+	}
+}
+
 export function sortByName(dispatch, getState) {
 	return (dispatch, getState) => {
 		var state = getState()
-		var sorted = state.pokemon                                  
+		var sorted = state.displayPokemon
 		sorted.sort(function(a,b) {                           
 			var nameA = a.name.toUpperCase();                   
 			var nameB = b.name.toUpperCase();                   
@@ -100,24 +115,24 @@ export function sortByName(dispatch, getState) {
 			}                                                   
 			return 0;                                           
 		});                                                   
-		return {
+		dispatch ({
 			type: SortingOrders.NAME,
-			pokemon: sorted
-		}
+			displayPokemon: sorted
+		})
 	}
 }
 
 export function sortByID(dispatch, getState) {
 	return (dispatch, getState) => {
 		var state = getState()
-		var sorted = state.pokemon
+		var sorted = state.displayPokemon
 		sorted.sort(function (a,b) {
 			return a.id - b.id;
 		})
-		return {
+		dispatch ({
 			type: SortingOrders.ID,
-			pokemon: sorted
-		}
+			displayPokemon: sorted
+		})
 	}
 }
 

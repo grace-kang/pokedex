@@ -6,6 +6,7 @@ import {
 	SELECT_POKEMON,
 	REQUEST_POKEMON_INFO,
 	RECEIVE_POKEMON_INFO,
+	FILTER_POKEMON,
 	SortingOrders
 } from '../actions/actions'
 
@@ -36,10 +37,21 @@ function pokemon(state = [], action) {
 	switch (action.type) {
 		case RECEIVE_POKEMON:
 			return action.pokemon
+		default:
+			return state
+	}
+}
+
+function displayPokemon(state = [], action) {
+	switch (action.type) {
+		case RECEIVE_POKEMON:
+			return action.pokemon
+		case FILTER_POKEMON:
+			return action.displayPokemon
 		case SortingOrders.ID:
-			return action.pokemon
+			return action.displayPokemon
 		case SortingOrders.NAME:
-			return action.pokemon
+			return action.displayPokemon
 		default:
 			return state
 	}
@@ -86,6 +98,7 @@ export default combineReducers({
 	isFetching,
 	error,
 	pokemon,
+	displayPokemon,
 	selectedPokemon,
 	pokemonInfo
 })
