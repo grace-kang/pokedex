@@ -5,3 +5,9 @@
 .Modal {
 	background-color: rgba(0,0,0,0.3);
 }
+
+input:focus,
+select:focus,
+button:focus {
+	outline: none;
+}

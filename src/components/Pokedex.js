@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import Pokemon from './Pokemon'
-import Modal from './Modal'
+import Modal from './Modal' 
 import Search from './Search'
 import Sort from './Sort'
 import {
@@ -55,7 +55,7 @@ class Pokedex extends React.Component {
 				modal = (
 					<Modal>
 						<div onClick={this.handleHide} className="Modal flex w-full h-full justify-center items-center fixed pin-t pin-l">
-							<div className="max-w-xs w-64 border-2 border-grey bg-white rounded flex-col justify-center">
+							<div className="max-w-xs w-64 border-2 shadow border-grey bg-white rounded flex-col justify-center">
 								<div className="Pokemon-spirte p-6">
 									<img className="w-full" src={"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/" + selectedPokemon + ".png"} alt="Pokemon sprite" />
 								</div>
@@ -101,7 +101,7 @@ class Pokedex extends React.Component {
 			<div className="Pokedex">
 				<Search onChange={this.handleSearch} />
 				<Sort onChange={this.handleSort} />
-				<div className="Pokedex-pokemon flex flex-wrap">{pokemon}</div>
+				<div className="Pokedex-pokemon pt-4 flex flex-wrap">{pokemon}</div>
 				{modal}
 			</div>
 		);
