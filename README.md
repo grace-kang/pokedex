@@ -11,7 +11,10 @@ https://pokedex-web.herokuapp.com
 ## Installation
 - To run locally:
 
-`npm install`
+```
+npm install
+npm start
+```
 
-`npm start`
+Go to http://localhost:3000
 
