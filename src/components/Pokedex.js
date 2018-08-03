@@ -1,5 +1,5 @@
 import React from 'react'
-import { connect } from 'react-redux'
+import { connect } from 'react-redux' 
 import Pokemon from './Pokemon'
 import Modal from './Modal' 
 import Search from './Search'
@@ -101,7 +101,7 @@ class Pokedex extends React.Component {
 			<div className="Pokedex">
 				<Search onChange={this.handleSearch} />
 				<Sort onChange={this.handleSort} />
-				<div className="Pokedex-pokemon pt-4 flex flex-wrap">{pokemon}</div>
+				<div className="Pokedex-pokemon pt-4 flex justify-center flex-wrap">{pokemon}</div>
 				{modal}
 			</div>
 		);
