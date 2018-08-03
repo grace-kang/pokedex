@@ -1,6 +1,7 @@
 # Pokédex
 A representation of the Pokédex built with React/Redux. 
-(https://pokedex-web.herokuapp.com)
+
+https://pokedex-web.herokuapp.com
 
 ## Features
 - Real-time search
@@ -9,6 +10,7 @@ A representation of the Pokédex built with React/Redux.
 
 ## Installation
 - To run locally:
-`npm install`
-`npm start`
+
+`npm install
+npm start`
 
