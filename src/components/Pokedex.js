@@ -47,7 +47,7 @@ class Pokedex extends React.Component {
 				modal = (
 					<Modal>
 						<div onClick={this.handleHide} className="Modal flex w-full h-full justify-center items-center fixed pin-t pin-l">
-							<div className="max-w-xs w-64 shadow-lg bg-white rounded flex-col justify-center">
+							<div className="w-1/3 shadow-lg bg-white rounded flex-col justify-center">
 								<div className="Pokemon-spirte p-6">
 									<img className="w-full" src={"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/" + selectedPokemon + ".png"} alt="Pokemon sprite" />
 								</div>
@@ -63,11 +63,11 @@ class Pokedex extends React.Component {
 				modal = (
 					<Modal>
 						<div onClick={this.handleHide} className="Modal flex w-full h-full justify-center items-center fixed pin-t pin-l">
-							<div className="max-w-xs w-64 shadow-lg bg-white rounded flex-col justify-center">
+							<div className="w-1/3 shadow-lg bg-white rounded flex-col justify-center">
 								<div className="Pokemon-spirte p-6">
 									<img className="w-full" src={"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/" + selectedPokemon + ".png"} alt="Pokemon sprite" />
 								</div>
-								<div className="px-6 my-12 mb-16 flex justify-center">
+								<div className="px-10 my-12 mb-24 flex justify-center">
 									<BeatLoader color={'#FF9DB7'} loading={true} />
 								</div>
 							</div>
@@ -78,13 +78,13 @@ class Pokedex extends React.Component {
 				modal = (
 					<Modal>
 						<div onClick={this.handleHide} className="Modal flex w-full h-full justify-center items-center fixed pin-t pin-l">
-							<div className="max-w-sm w-64 shadow-lg bg-white rounded flex-col justify-center">
-								<div className="Pokemon-sprite p-6">
+							<div className="w-1/3 shadow-lg bg-white rounded flex-col justify-center">
+								<div className="Pokemon-sprite">
 									<img className="w-full" src={"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/" + selectedPokemon + ".png"} alt="Pokemon sprite" />
 								</div>
-								<div className="px-6 pb-6">
-									<div className="text-center text-grey-darkest uppercase font-bold text-lg test-grey-darker mb-4">{pokemonInfo.info.name}</div>
-									<p className="text-grey-darker font-sans text-sm text-center">{pokemonInfo.species_info.flavor_text}</p><br />
+								<div className="px-10 pb-10">
+									<div className="text-center text-grey-darkest uppercase font-bold text-xl test-grey-darker mb-4">{pokemonInfo.info.name}</div>
+									<p className="text-grey-darker font-sans text-sm">{pokemonInfo.species_info.flavor_text}</p><br />
 									<p className="font-sans uppercase text-grey-darker text-sm">
 										<b>ID: </b>{selectedPokemon}<br />
 										<b>Type(s): </b>{pokemonInfo.info.types.map(t => (t + ' '))}<br />
