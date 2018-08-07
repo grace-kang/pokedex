@@ -6,6 +6,9 @@ import {
 	SELECT_POKEMON,
 	REQUEST_POKEMON_INFO,
 	RECEIVE_POKEMON_INFO,
+	FETCH_INFO_ERROR,
+	REQUEST_SPECIES_INFO,
+	RECEIVE_SPECIES_INFO,
 	FILTER_POKEMON,
 	SortingOrders
 } from '../actions/actions'
@@ -77,14 +80,24 @@ function pokemonInfo(
 	switch (action.type) {
 		case REQUEST_POKEMON_INFO:
 			return Object.assign({}, state, {
-				isFetching: true
+				isFetching: true,
+				error: null
 			})
 		case RECEIVE_POKEMON_INFO:
 			return Object.assign({}, state, {
-				isFetching: false,
 				info: action.info
 			})
-		case FETCH_ERROR:
+		case REQUEST_SPECIES_INFO:
+			return Object.assign({}, state, {
+				isFetching: true,
+				error: null
+			})
+		case RECEIVE_SPECIES_INFO:
+			return Object.assign({}, state, {
+				isFetching: false,
+				species_info: action.species_info
+			})
+		case FETCH_INFO_ERROR:
 			return Object.assign({}, state, {
 				isFetching: false,
 				error: action.error

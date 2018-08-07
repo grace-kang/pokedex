@@ -47,7 +47,15 @@ class Pokedex extends React.Component {
 				modal = (
 					<Modal>
 						<div onClick={this.handleHide} className="Modal flex w-full h-full justify-center items-center fixed pin-t pin-l">
-							Error: {pokemonInfo.error}
+							<div className="max-w-xs w-64 shadow-lg bg-white rounded flex-col justify-center">
+								<div className="Pokemon-spirte p-6">
+									<img className="w-full" src={"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/" + selectedPokemon + ".png"} alt="Pokemon sprite" />
+								</div>
+								<p className="px-6 my-12 mb-16 text-sm text-red flex justify-center">
+									Error: {pokemonInfo.error.message}.<br />
+									Please try again later.
+								</p>
+							</div>
 						</div>
 					</Modal>
 				)
@@ -55,7 +63,7 @@ class Pokedex extends React.Component {
 				modal = (
 					<Modal>
 						<div onClick={this.handleHide} className="Modal flex w-full h-full justify-center items-center fixed pin-t pin-l">
-							<div className="max-w-xs w-64 border-2 shadow border-grey bg-white rounded flex-col justify-center">
+							<div className="max-w-xs w-64 shadow-lg bg-white rounded flex-col justify-center">
 								<div className="Pokemon-spirte p-6">
 									<img className="w-full" src={"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/" + selectedPokemon + ".png"} alt="Pokemon sprite" />
 								</div>
@@ -70,16 +78,21 @@ class Pokedex extends React.Component {
 				modal = (
 					<Modal>
 						<div onClick={this.handleHide} className="Modal flex w-full h-full justify-center items-center fixed pin-t pin-l">
-							<div className="max-w-sm w-64 border-2 border-grey bg-white rounded flex-col justify-center">
+							<div className="max-w-sm w-64 shadow-lg bg-white rounded flex-col justify-center">
 								<div className="Pokemon-sprite p-6">
 									<img className="w-full" src={"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/" + selectedPokemon + ".png"} alt="Pokemon sprite" />
 								</div>
 								<div className="px-6 pb-6">
-									<div className="text-center font-bold text-xl test-grey-darker mb-4">{pokemonInfo.info.name.charAt(0).toUpperCase() + pokemonInfo.info.name.substr(1)}</div>
-									<div className="text-grey-darker text-base"><b>ID:</b> {selectedPokemon}</div>
-									<div className="text-grey-darker text-base"><b>Type(s): </b>{pokemonInfo.info.types.map(t => (t + ' '))}</div>
-									<div className="text-grey-darker text-base"><b>Height: </b>{pokemonInfo.info.height}</div>
-									<div className="text-grey-darker text-base"><b>Weight: </b>{pokemonInfo.info.weight}</div>
+									<div className="text-center text-grey-darkest uppercase font-bold text-lg test-grey-darker mb-4">{pokemonInfo.info.name}</div>
+									<p className="text-grey-darker font-sans text-sm text-center">{pokemonInfo.species_info.flavor_text}</p><br />
+									<p className="font-sans uppercase text-grey-darker text-sm">
+										<b>ID: </b>{selectedPokemon}<br />
+										<b>Type(s): </b>{pokemonInfo.info.types.map(t => (t + ' '))}<br />
+										<b>Height: </b>{pokemonInfo.info.height}<br />
+										<b>Weight: </b>{pokemonInfo.info.weight}<br />
+										<b>Generation: </b>{pokemonInfo.species_info.generation}<br />
+										<b>Evolves From: </b>{pokemonInfo.species_info.evolves_from}
+									</p>
 								</div>
 							</div>
 						</div>
