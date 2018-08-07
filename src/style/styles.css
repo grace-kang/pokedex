@@ -13,3 +13,8 @@ button:focus {
 }
 
 
+#card {
+	width: 400px;
+	height: 650px;
+}
+

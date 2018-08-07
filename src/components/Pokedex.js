@@ -47,8 +47,8 @@ class Pokedex extends React.Component {
 				modal = (
 					<Modal>
 						<div onClick={this.handleHide} className="Modal flex w-full h-full justify-center items-center fixed pin-t pin-l">
-							<div className="w-1/3 shadow-lg bg-white rounded flex-col justify-center">
-								<div className="Pokemon-spirte p-6">
+							<div id="card" className="shadow-lg bg-white rounded flex-col justify-center">
+								<div className="Pokemon-spirte px-6">
 									<img className="w-full" src={"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/" + selectedPokemon + ".png"} alt="Pokemon sprite" />
 								</div>
 								<p className="px-6 my-12 mb-16 text-sm text-red flex justify-center">
@@ -63,8 +63,8 @@ class Pokedex extends React.Component {
 				modal = (
 					<Modal>
 						<div onClick={this.handleHide} className="Modal flex w-full h-full justify-center items-center fixed pin-t pin-l">
-							<div className="w-1/3 shadow-lg bg-white rounded flex-col justify-center">
-								<div className="Pokemon-spirte p-6">
+							<div id="card" className="shadow-lg bg-white rounded flex-col justify-center">
+								<div className="Pokemon-spirte px-6">
 									<img className="w-full" src={"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/" + selectedPokemon + ".png"} alt="Pokemon sprite" />
 								</div>
 								<div className="px-10 my-12 mb-24 flex justify-center">
@@ -78,8 +78,8 @@ class Pokedex extends React.Component {
 				modal = (
 					<Modal>
 						<div onClick={this.handleHide} className="Modal flex w-full h-full justify-center items-center fixed pin-t pin-l">
-							<div className="w-1/3 shadow-lg bg-white rounded flex-col justify-center">
-								<div className="Pokemon-sprite">
+							<div id="card" className="shadow-lg bg-white rounded flex-col justify-center">
+								<div className="Pokemon-sprite px-6">
 									<img className="w-full" src={"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/" + selectedPokemon + ".png"} alt="Pokemon sprite" />
 								</div>
 								<div className="px-10 pb-10">
