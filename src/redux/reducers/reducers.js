@@ -40,6 +40,10 @@ function pokemon(state = [], action) {
 	switch (action.type) {
 		case RECEIVE_POKEMON:
 			return action.pokemon
+		case SortingOrders.ID:
+			return action.pokemon
+		case SortingOrders.NAME:
+			return action.pokemon
 		default:
 			return state
 	}
@@ -52,9 +56,9 @@ function displayPokemon(state = [], action) {
 		case FILTER_POKEMON:
 			return action.displayPokemon
 		case SortingOrders.ID:
-			return action.displayPokemon
+			return action.pokemon
 		case SortingOrders.NAME:
-			return action.displayPokemon
+			return action.pokemon
 		default:
 			return state
 	}

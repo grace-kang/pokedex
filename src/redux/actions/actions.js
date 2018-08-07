@@ -154,7 +154,7 @@ export function filterPokemon(searchString = '') {
 export function sortByName(dispatch, getState) {
 	return (dispatch, getState) => {
 		var state = getState()
-		var sorted = state.displayPokemon
+		var sorted = state.pokemon
 		sorted.sort(function(a,b) {                           
 			var nameA = a.name.toUpperCase();                   
 			var nameB = b.name.toUpperCase();                   
@@ -168,7 +168,7 @@ export function sortByName(dispatch, getState) {
 		});                                                   
 		dispatch ({
 			type: SortingOrders.NAME,
-			displayPokemon: sorted
+			pokemon: sorted
 		})
 	}
 }
@@ -176,13 +176,13 @@ export function sortByName(dispatch, getState) {
 export function sortByID(dispatch, getState) {
 	return (dispatch, getState) => {
 		var state = getState()
-		var sorted = state.displayPokemon
+		var sorted = state.pokemon
 		sorted.sort(function (a,b) {
 			return a.id - b.id;
 		})
 		dispatch ({
 			type: SortingOrders.ID,
-			displayPokemon: sorted
+			pokemon: sorted
 		})
 	}
 }
