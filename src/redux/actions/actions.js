@@ -87,7 +87,7 @@ function receiveSpeciesInfo(json) {
 	var english_text = '';
 	for (var i in json.flavor_text_entries) {
 		if (json.flavor_text_entries[i].language.name === "en") {
-			english_text = json.flavor_text_entries[i].flavor_text
+			english_text = json.flavor_text_entries[i].flavor_text.replace(/(\n|\f)/gm, " ")
 			break
 		}
 	}
