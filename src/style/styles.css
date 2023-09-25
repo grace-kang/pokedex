@@ -3,18 +3,39 @@
 @tailwind utilities;
 
 .Modal {
-	background-color: rgba(0,0,0,0.3);
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
 input:focus,
 select:focus,
 button:focus {
-	outline: none;
+  outline: none;
 }
 
+.Pokemon {
+  background-color: white;
+  margin-left: 0.5rem;
+  margin-top: 0.5rem;
+
+  & button {
+	padding: 0.5rem;
+	border-width: 2px;
+	border-color: transparent;
+
+    &:hover {
+      border: solid;
+	  border-width: 2px;
+      border-color: rgba(254, 202, 202);
+    }
+  }
+
+  & p {
+	font-size: 0.75rem;
+	text-transform: uppercase;
+  }
+}
 
 #card {
-	width: 400px;
-	height: 700px;
+  width: 400px;
+  height: 700px;
 }
-
