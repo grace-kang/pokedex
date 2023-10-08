@@ -1,0 +1,25 @@
+.Search {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background-color: var(--white);
+  padding: 1rem;
+
+  & input {
+    padding: 0.5rem 0.75rem;
+    border: solid;
+    border-radius: 0.25rem;
+    border-width: 2px;
+    border-color: var(--light-grey);
+    color: var(--medium-grey);
+
+    &:hover,
+    &:focus {
+      border-color: var(--light-red);
+    }
+
+    &:focus::placeholder {
+      opacity: 0;
+    }
+  }
+}

@@ -1,0 +1,22 @@
+.Pokemon {
+  background-color: var(--white);
+  margin-left: 0.5rem;
+  margin-top: 0.5rem;
+
+  & button {
+    padding: 0.5rem;
+    border-width: 2px;
+    border-color: transparent;
+
+    &:hover {
+      border: solid;
+      border-width: 2px;
+      border-color: var(--light-red);
+    }
+  }
+
+  & p {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+  }
+}
