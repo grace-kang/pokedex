@@ -6,6 +6,11 @@
   background-color: rgba(0, 0, 0, 0.3);
 }
 
+#card {
+  width: 400px;
+  height: 700px;
+}
+
 input:focus,
 select:focus,
 button:focus {
@@ -13,29 +18,50 @@ button:focus {
 }
 
 .Pokemon {
-  background-color: white;
+  background-color: #ffffff;
   margin-left: 0.5rem;
   margin-top: 0.5rem;
 
   & button {
-	padding: 0.5rem;
-	border-width: 2px;
-	border-color: transparent;
+    padding: 0.5rem;
+    border-width: 2px;
+    border-color: transparent;
 
     &:hover {
       border: solid;
-	  border-width: 2px;
+      border-width: 2px;
       border-color: rgba(254, 202, 202);
     }
   }
 
   & p {
-	font-size: 0.75rem;
-	text-transform: uppercase;
+    font-size: 0.75rem;
+    text-transform: uppercase;
   }
 }
 
-#card {
-  width: 400px;
-  height: 700px;
+.Search {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background-color: #ffffff;
+  padding: 1rem;
+
+  & input {
+    padding: 0.5rem 0.75rem;
+    border: solid;
+    border-radius: 0.25rem;
+    border-width: 2px;
+    border-color: rgba(229, 231, 235);
+    color: rgba(75, 85, 99);
+
+    &:hover,
+    &:focus {
+      border-color: rgba(254, 202, 202);
+    }
+
+    &:focus::placeholder {
+      opacity: 0;
+    }
+  }
 }
