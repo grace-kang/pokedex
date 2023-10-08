@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --white: rgb(255, 255, 255);
+  --border-grey: rgba(254, 202, 202);
+  --medium-grey: rgba(75, 85, 99);
+  --light-red: rgb(254, 202, 202);
+}
+
 .Modal {
   background-color: rgba(0, 0, 0, 0.3);
 }
@@ -18,7 +25,7 @@ button:focus {
 }
 
 .Pokemon {
-  background-color: #ffffff;
+  background-color: var(--white);
   margin-left: 0.5rem;
   margin-top: 0.5rem;
 
@@ -30,7 +37,7 @@ button:focus {
     &:hover {
       border: solid;
       border-width: 2px;
-      border-color: rgba(254, 202, 202);
+      border-color: var(--light-red);
     }
   }
 
@@ -44,7 +51,7 @@ button:focus {
   display: flex;
   justify-content: center;
   width: 100%;
-  background-color: #ffffff;
+  background-color: var(--white);
   padding: 1rem;
 
   & input {
@@ -52,12 +59,12 @@ button:focus {
     border: solid;
     border-radius: 0.25rem;
     border-width: 2px;
-    border-color: rgba(229, 231, 235);
-    color: rgba(75, 85, 99);
+    border-color: var(--border-grey);
+    color: var(--medium-grey);
 
     &:hover,
     &:focus {
-      border-color: rgba(254, 202, 202);
+      border-color: var(--light-red);
     }
 
     &:focus::placeholder {
