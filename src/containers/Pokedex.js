@@ -1,9 +1,9 @@
 import React from 'react'
 import { connect } from 'react-redux' 
-import Pokemon from './Pokemon'
-import Modal from './Modal' 
-import Search from './Search'
-import Sort from './Sort'
+import Pokemon from '../components/Pokemon'
+import Modal from '../components/Modal' 
+import Search from '../components/Search'
+import Sort from '../components/Sort'
 import {
 	selectPokemon,
 	fetchPokemonInfo,
