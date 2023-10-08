@@ -1,0 +1,28 @@
+.Sort {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    background-color: var(--lightest-grey);
+
+    & label {
+        margin-right: 0.5rem;
+        color: var(--medium-grey);
+        font-size: 0.8rem;
+        text-transform: uppercase;
+    }
+
+    & select {
+        border: solid;
+        border-color: var(--light-grey);
+        padding: 0.5rem 0.75rem;
+        border-radius: 0.25rem;
+        border-width: 2px;
+        color: var(--medium-grey);
+
+        &:hover, &:focus {
+            border-color: var(--light-red);
+        }
+    }
+}
