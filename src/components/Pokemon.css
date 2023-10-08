@@ -3,6 +3,10 @@
   margin-left: 0.5rem;
   margin-top: 0.5rem;
 
+  &:hover {
+    scale: 1.2;
+  }
+
   & button {
     padding: 0.5rem;
     border-width: 2px;
