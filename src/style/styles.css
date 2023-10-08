@@ -4,9 +4,13 @@
 
 :root {
   --white: rgb(255, 255, 255);
-  --border-grey: rgba(254, 202, 202);
-  --medium-grey: rgba(75, 85, 99);
-  --light-red: rgb(254, 202, 202);
+  --border-grey: rgb(254, 202, 202);
+  --medium-grey: rgb(75, 85, 99);
+  --light-red: rgb(252, 165, 165);
+
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
 .Modal {
