@@ -20,7 +20,5 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
-  "devDependencies": {
-    "tailwindcss": "^0.6.4"
-  }
+  "devDependencies": {}
 }

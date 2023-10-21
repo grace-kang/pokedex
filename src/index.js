@@ -1,4 +1,3 @@
-import "./style/output.css";
 import "./style/styles.css";
 import React from "react";
 import { render } from "react-dom";

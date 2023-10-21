@@ -1,7 +1,3 @@
-@tailwind preflight;
-@tailwind components;
-@tailwind utilities;
-
 :root {
   --white: rgb(255, 255, 255);
   --lightest-grey: rgba(249, 250, 251);
