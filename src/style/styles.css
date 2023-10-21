@@ -5,22 +5,25 @@
   --medium-grey: rgb(75, 85, 99);
   --light-red: rgb(252, 165, 165);
 
-  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
-    "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family:
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    Arial,
+    "Noto Sans",
+    sans-serif,
+    "Apple Color Emoji",
+    "Segoe UI Emoji",
+    "Segoe UI Symbol",
+    "Noto Color Emoji";
 }
 
 input:focus,
 select:focus,
 button:focus {
   outline: none;
-}
-
-.Modal {
-  background-color: rgba(0, 0, 0, 0.3);
-}
-
-#card {
-  width: 400px;
-  height: 700px;
 }

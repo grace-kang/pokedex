@@ -1,5 +1,4 @@
 .Pokemon {
-  background-color: var(--white);
   margin-left: 0.5rem;
   margin-top: 0.5rem;
 
@@ -11,6 +10,7 @@
     padding: 0.5rem;
     border-width: 2px;
     border-color: transparent;
+    background-color: var(--white);
 
     &:hover {
       border: solid;
