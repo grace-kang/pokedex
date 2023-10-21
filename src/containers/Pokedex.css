@@ -1,0 +1,55 @@
+.Pokedex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.Modal {
+  display: flex;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  justify-content: center;
+  align-items: center;
+
+  & #card {
+    display: flex;
+    flex-direction: column;
+    padding: 4rem;
+    width: 50%;
+    height: 80%;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.25rem;
+    background-color: var(--white);
+
+    & img {
+      width: 50%;
+    }
+
+    & .PokemonText {
+      display: flex;
+      flex-direction: column;
+      padding: 2rem;
+      color: var(--dark-grey);
+    }
+
+    & .PokemonName {
+      text-align: center;
+      text-transform: uppercase;
+      font-size: 1.25rem;
+      font-weight: 600;
+      padding: 2rem 0;
+    }
+
+    & .PokemonDescription {
+      padding: 2rem 0;
+    }
+
+    & .PokemonStats {
+      padding: 2rem 0;
+    }
+  }
+}
